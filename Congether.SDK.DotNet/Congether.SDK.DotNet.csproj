@@ -3,17 +3,25 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0-beta.3</Version>
+    <Version>1.0.0</Version>
     <Authors>schnell.technology - Patrick Schnell</Authors>
     <Company>schnell.technology - Patrick Schnell</Company>
     <Product>Congether</Product>
     <Copyright>(c) 2018 schnell.technology - Patrick Schnell. All rights reserved.</Copyright>
-    <PackageProjectUrl>https://congether.com/sdk/dotnet</PackageProjectUrl>
+    <PackageProjectUrl>https://congether.com/</PackageProjectUrl>
     <Description>A client SDK for Congether</Description>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageLicenseUrl>https://congether.com/sdk/license</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://github.com/schnell-technology/congether-sdk-dotnet/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://congether.com/nuget-icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/schnell-technology/congether-sdk-dotnet</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\Congether.SDK.DotNet.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\Congether.SDK.DotNet.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
