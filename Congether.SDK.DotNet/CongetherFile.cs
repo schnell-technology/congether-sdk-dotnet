@@ -21,11 +21,22 @@ namespace Congether.SDK.DotNet
         }
     }
 
-    internal class CongetherPrivacyMode
+    public class CongetherPrivacyMode
     {
-        internal const string ACCEPTED = null;
-        internal const string PSEUDONYMISATION = "congether.privacy.pseudonymisation";
-        internal const string ANONYMISATION = "congether.privacy.anonymisation";
+        /// <summary>
+        /// Accepts all installation- and device-informations including Hostname and IP-Addresses
+        /// </summary>
+        public const string ACCEPTED = null;
+
+        /// <summary>
+        /// Accepts installation-informations and a subset of Hostname and IP-Adresses. It disallows a device-reference.
+        /// </summary>
+        public const string PSEUDONYMISATION = "congether.privacy.pseudonymisation";
+
+        /// <summary>
+        /// This will disallow all installation- and device-informations.
+        /// </summary>
+        public const string ANONYMISATION = "congether.privacy.anonymisation";
 
         internal static bool IsValid(string policy)
         {

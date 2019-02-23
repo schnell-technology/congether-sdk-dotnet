@@ -112,7 +112,7 @@ namespace Congether.SDK.DotNet
         {
             if(CongetherPrivacyMode.IsValid(policy))
             {
-                var congetherFile = await this.FileHandler.GetCongetherFile(this._appIdentifier);
+                var congetherFile = await this.FileHandler.ReadAppCongetherFile();
                 congetherFile.Privacy_Mode = policy;
                 congetherFile.Privacy_PolicyAccepted = DateTime.Now;
                 await this.FileHandler.SetAppCongetherFile(congetherFile);
@@ -185,7 +185,7 @@ namespace Congether.SDK.DotNet
             var endpoint = new EndpointInfo
             {
                 DeviceKey = _deviceKey,
-                PrivacyPolicy = _commonCongetherFile?.Privacy_Mode,
+                PrivacyPolicy = _appCongetherFile?.Privacy_Mode,
                 AppIdentifier = _appIdentifier,
                 AppVersion = _version ?? Assembly.GetEntryAssembly().GetName().Version.ToString(),
                 InstallationId = _appCongetherFile?.InstanceId,
